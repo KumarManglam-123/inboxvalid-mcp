@@ -138,3 +138,14 @@ To transition this server to production:
 - **Stateless MCP Server**: The server maintains no local session state. Multiple worker processes can run behind load balancers or container orchestrators without coordination.
 - **Shared Cache & Feed Storage**: In a distributed setup, domain MX cache and disposable lists move to Redis or an edge KV store (Cloudflare Workers KV, AWS ElastiCache) for real-time invalidation and synchronized updates.
 - **Transport Flexibility**: While stdio is ideal for local desktop clients, the server logic is isolated from the transport layer and can be mounted over SSE (Server-Sent Events) or WebSockets for cloud-hosted agent deployments.
+
+---
+
+## Demo
+
+Screenshots of the verify_email tool being invoked via MCP Inspector, showing all three result states:
+
+![Valid email](demo/valid.png)
+![Risky email - disposable domain](demo/risky.png)
+![Invalid email syntax](demo/invalid.png)
+
